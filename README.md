@@ -1,8 +1,8 @@
-# HTML and CSS practice
+# HTML and CSS practice project
 
-Given a web site designed in Photoshop, this project breaks the pages into base components using pure HTML and CSS classes (with a tiny bit of JS for toggling collapsible components).
+Given a web site designed in Photoshop, this project breaks the pages into base components using semantic HTML and CSS classes (with a tiny bit of JS for toggling collapsible components).
 
-The idea is to take be given a fictional web site design in Photoshop (or similar) and produce fully response design with pure CSS.
+The result is fully a responsive design using all custom CSS.
 
 ## Desktop
 ![alt text](standard_view.png)
