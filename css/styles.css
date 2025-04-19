@@ -337,7 +337,23 @@ a {
   background-color: #02cdf1;
 }
 
+.card--primary .badge--primary {
+  background-color: #2e77d7;
+}
+
 /* Plans */
+.plan {
+  /* border: 1px black solid; */
+  transition: transform 0.2s ease-out;
+
+  /* margin: 20px; */
+}
+
+.plan--popular {
+  transform: scale(1.1);
+}
+
+
 .plan__name {
   color: white;
   font-weight: 500;
@@ -382,6 +398,17 @@ a {
   z-index: 50;
 }
 
+.plan--popular .btn {
+  background: var(--color-headings);
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+
+.plan--popular:hover {
+  transform: scale(1.15);
+}
 
 @media screen and (min-width: 1024px) {
   .plan__name {
@@ -606,6 +633,7 @@ background: var(--color-body-darker);
   padding: var(--padding-vertical) 2rem;
 }
 
+
 .block__header{
   text-align: center;
 }
@@ -747,6 +775,17 @@ background: var(--color-body-darker);
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     grid-template-rows: auto;
   }
+}
+
+/* Plans Block*/
+.block-plans .grid { 
+  /* gap: {rows} {columns} */
+  gap: 8rem 4rem;
+}
+
+.block-plans .card  {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 /* Utilities */
