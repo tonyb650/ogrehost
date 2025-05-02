@@ -650,6 +650,7 @@ background: var(--color-body-darker);
 
 .block__header{
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .block__heading {
