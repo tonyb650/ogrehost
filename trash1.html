@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest - Online Learning Platform</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .featured-courses,
+        .learning-paths,
+        .success-stories {
+            padding: 40px;
+        }
+        
+        .course-card {
+            display: inline-block;
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        
+        .course-card img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial {
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 20% auto;
+            padding: 20px;
+            width: 400px;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Math</a></li>
+                <li><a href="#">Science</a></li>
+                <li><a href="#">Languages</a></li>
+                <li><a href="#">Arts</a></li>
+                <li><input type="text" placeholder="Search..."></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video src="placeholder-video.mp4" autoplay loop muted></video>
+        <div class="hero-content">
+            <h1 id="tagline">Learn at your own pace</h1>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+    <section class="featured-courses">
+        <h2>Featured Courses</h2>
+        <div class="course-card">
+            <img src="placeholder-image.jpg" alt="Course Image">
+            <h3>Course Title</h3>
+            <p>Instructor: John Doe</p>
+            <p>Course description goes here...</p>
+        </div>
+        <div class="course-card">
+            <img src="placeholder-image.jpg" alt="Course Image">
+            <h3>Course Title</h3>
+            <p>Instructor: Jane Smith</p>
+            <p>Course description goes here...</p>
+        </div>
+        <!-- Add more course cards as needed -->
+    </section>
+
+    <section class="learning-paths">
+        <h2>Learning Paths</h2>
+        <p>Take a short quiz to determine your learning style and interests.</p>
+        <button>Start Quiz</button>
+    </section>
+
+    <section class="success-stories">
+        <h2>Success Stories</h2>
+        <div class="testimonial">
+            <p>"EduQuest helped me learn a new skill and advance my career."</p>
+            <p>- Sarah Johnson</p>
+        </div>
+        <div class="testimonial">
+            <p>"I never thought I could learn a new language, but EduQuest made it easy and fun."</p>
+            <p>- Michael Brown</p>
+        </div>
+        <!-- Add more testimonials as needed -->
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><button id="contactBtn">Contact Us</button></li>
+        </ul>
+    </footer>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+            <p>Customer Support: support@eduquest.com</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code
+        const taglines = [
+            "Learn at your own pace",
+            "Discover new passions",
+            "Expand your horizons"
+        ];
+        let taglineIndex = 0;
+
+        function rotateTagline() {
+            const taglineElement = document.getElementById("tagline");
+            taglineElement.textContent = taglines[taglineIndex];
+            taglineIndex = (taglineIndex + 1) % taglines.length;
+        }
+
+        setInterval(rotateTagline, 3000);
+
+        // Contact modal functionality
+        const contactBtn = document.getElementById("contactBtn");
+        const contactModal = document.getElementById("contactModal");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        contactBtn.onclick = function() {
+            contactModal.style.display = "block";
+        };
+
+        closeBtn.onclick = function() {
+            contactModal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target === contactModal) {
+                contactModal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
