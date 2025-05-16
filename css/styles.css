@@ -211,7 +211,7 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   outline: 0;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   text-transform: uppercase;
   white-space: nowrap;
   text-align: center;
@@ -276,6 +276,7 @@ a {
 @media screen and (min-width: 1024px) {
   .btn {
     font-size: 1.5rem;
+    padding: 2rem 3rem;
   }
 }
 
@@ -300,6 +301,7 @@ a {
   border: 0;
   flex-grow: 1;
   padding: 1rem 2rem;
+  width: 0;
 }
 
 .input-group .btn {
@@ -567,6 +569,7 @@ a {
 .callout {
   padding: 4rem;
   border-radius: 5px;
+  width: 80%;
 }
 
 .callout--primary {
@@ -679,6 +682,10 @@ background: var(--color-body-darker);
 }
 
 /* Navigation */
+.nav-wrapper {
+  background: black;
+}
+
 .nav {
   background: black;
   display: flex;
@@ -686,7 +693,10 @@ background: var(--color-body-darker);
   flex-wrap: wrap;
   padding: 0 1rem;
   align-items: center;
+
 }
+
+
 
 .nav__list {
   width: 100%;
@@ -778,13 +788,21 @@ background: var(--color-body-darker);
 
 .block-domain__prices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 6rem);
+  color: var(--color-headings);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 6rem);
   font-size: 2rem;
   font-weight: 600;
   justify-items: center;
   max-width: 700px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 512px) {
+  .block-domain__prices {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  }
 }
 
 @media screen and (min-width: 768px) {
