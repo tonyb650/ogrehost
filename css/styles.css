@@ -577,6 +577,11 @@ a {
   color: white;
 }
 
+.callout--footer {
+  position: relative;
+  top: 70px;
+}
+
 .callout__content {
   text-align: center;
 }
@@ -867,6 +872,7 @@ background: var(--color-body-darker);
 }
 /* Footer */
 .footer { 
+  padding-top: 120px;
   background-color: #232323;
 }
 
